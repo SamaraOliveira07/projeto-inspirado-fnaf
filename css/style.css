@@ -1,0 +1,121 @@
+@charset "UTF-8";
+body {
+    font-family: "Poppins", sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.informacoes {
+    display: none;
+}
+
+.informacoes.ativa {
+    display: block;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+.informacoes h1 {
+    font-size: 35px;
+    color: rgb(178, 178, 178);
+    margin-bottom: 80px;
+    font-family: "GOT", sans-serif;
+    letter-spacing: 8px;
+}
+
+@font-face {
+    font-family: "GOT";
+    src: url(../fontes/GOT/GOT.ttf);
+}
+
+.informacoes .descricao {
+    width: 49%;
+    font-size: 24px;
+    color: rgb(178, 178, 178);
+    line-height: 40px;
+    height: 300px;
+    overflow: auto;
+    padding-right: 15px;
+}
+
+button{
+        border: none;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        border-radius: 50%;
+        filter: brightness(0.7);
+}
+
+button:hover {
+    filter: brightness(0.6); /* Ainda mais escuro ao passar o mouse */
+}
+
+.botoes-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.botoes-carrossel .botao {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.botao.selecionado{
+    width: 40px;
+    height: 40px;
+}
+
+.tamanho-botao{
+    width: 100%;
+    height: 100%;
+}
+
+.imagem {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+}
+
+.imagem.ativa {
+    display: block;
+    animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarImagem {
+    from {
+        opacity: 0.95;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+main::after{
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+    z-index: -1;
+}
